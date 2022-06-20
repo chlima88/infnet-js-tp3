@@ -132,6 +132,48 @@ function algorithm3() {
 
     }
 
+    function generateData() {
+        let studentList = [];
+        let numPassed = 0;
+        let numFailed = 0;
+
+        for (i = 1; i <=20; i++) {
+            let nota = Math.floor(Math.random() * 100)
+            nota >= 50 ? numPassed++ : numFailed++
+            studentList.push(new Student(i, nota))
+        }
+
+        return new Classroom(studentList, numPassed, numFailed);
+    }
+
+    function handleClick(event) {
+        event.preventDefault()
+
+        const report = createReport()
+        const oldReport = document.getElementById("q3-report")
+
+        if (oldReport) {
+            oldReport.parentNode.replaceChild(report, oldReport)
+        } else {
+            document.getElementById("q3-answer").appendChild(report)
+        }
+
+    }
+
+    class Student {
+        constructor(nr, nota) {
+            this.nr = nr;
+            this.nota = nota;
+        }
+    }
+
+    class Classroom {
+        constructor(studentList, numPassed, numFailed) {
+            this.studentList = studentList;
+            this.numPassed = numPassed;
+            this.numFailed = numFailed;
+        }
+    }
 
     const answerDiv = renderComponent({
         question: "q3",
@@ -151,61 +193,7 @@ function algorithm3() {
         eventHandler: handleClick
     })
 
-
     answerDiv.appendChild(form)  
-
-
-    function handleClick(event) {
-        event.preventDefault()
-
-        const report = createReport()
-
-        const oldReport = document.getElementById("q3-report")
-
-        if (oldReport) {
-            oldReport.parentNode.replaceChild(report, oldReport)
-        } else {
-            document.getElementById("q3-answer").appendChild(report)
-        }
-
-    }
-
-    function generateData() {
-        let studentList = [];
-        let numPassed = 0;
-        let numFailed = 0;
-
-        for (i = 1; i <=20; i++) {
-
-            let nota = Math.floor(Math.random() * 100)
-
-            if (nota >= 50 ) {
-                numPassed++
-            } else {
-                numFailed++
-            }
-
-            studentList.push(new Student(i, nota))
-        }
-
-        return new Classroom(studentList, numPassed, numFailed);
-
-    }
-
-    class Student {
-        constructor(nr, nota) {
-            this.nr = nr;
-            this.nota = nota;
-        }
-    }
-
-    class Classroom {
-        constructor(studentList, numPassed, numFailed) {
-            this.studentList = studentList;
-            this.numPassed = numPassed;
-            this.numFailed = numFailed;
-        }
-    }
 }
 
 algorithm3()

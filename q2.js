@@ -9,7 +9,7 @@ function algorithm2() {
 
         const statusMessage = document.getElementById("q2-form-status-message")
 
-        statusMessage.innerText = `Answer: ${num}! = ${result} (${time}ms)`
+        statusMessage.innerText = `Resposta: ${num}! = ${result} (${time}ms)`
     }
     
     function getPerformance(callback, num) {
@@ -116,7 +116,7 @@ function algorithm2() {
     const answerDiv = renderComponent({
         question: "q2",
         titleText: "Algorithm 2",
-        descriptionText: "Calcular o fatorial do numero informado e o tempo utilizao no calculo"
+        descriptionText: "Calcular o fatorial do numero informado e o tempo utilizado no calculo"
     })
 
     const valueInput = createInput({

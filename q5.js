@@ -1,15 +1,5 @@
 function algorithm5(){
 
-    function checkTriangle(a, b, c) {
-        let name 
-
-        if (a === b && a === c) name = "Equilátero"
-        else if (a === b || a === c || b == c) name = "Isósceles"
-        else name = "Escaleno"
-
-        return `O triangulo (${a} ${b} ${c}) é ${name}`
-    }
-
     function renderComponent({question, titleText, descriptionText}) {
         const html = document.querySelector("html")
         html.style.fontSize = "62.5%"
@@ -89,6 +79,16 @@ function algorithm5(){
         
         return form
 
+    }
+
+    function checkTriangle(a, b, c) {
+        let name 
+
+        if (a === b && a === c) name = "Equilátero"
+        else if (a === b || a === c || b == c) name = "Isósceles"
+        else name = "Escaleno"
+
+        return `O triangulo (${a} ${b} ${c}) é ${name}`
     }
 
     function handleSubmit(event) {

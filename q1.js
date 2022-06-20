@@ -20,13 +20,13 @@ function algorithm1() {
 
         if (minValue > maxValue) {
             // statusMessage.innerText = "'Min value' must be smaller than 'Max value'"
-            window.alert("'Min value' must be smaller than 'Max value'")
+            window.alert("'Valor mínimo' eve ser menor que 'Valor máximo'")
         } else {
             const numberList = findMutiples(minValue, maxValue);
             if (numberList === 0) {
-                statusMessage.innerText = `No multiples found.`
+                statusMessage.innerText = `Resposta: Nenhum multiplo encontrado.`
             } else {
-                statusMessage.innerText = `${numberList} multiples found`
+                statusMessage.innerText = `Resposta: ${numberList} multiplos encontrados`
             }
         }
 
